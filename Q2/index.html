@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This page asks the visitor for the current temperature, and gives some suggestions!</p>
+
+<hr>
+
+<p id="demo"> Response is printed here! If you enter the temperature.</p>
+
+<script>
+    
+    function myFunction() {
+
+        var temp = prompt("Please enter the current Temperature (Number only)", 30);
+        console.log("Entered temp is " + temp);
+        if (isNaN(temp) == false) {
+            if(temp > 100){
+                document.getElementById("demo").innerHTML =
+                "Hello Buddy, Please cool down!";
+            }else if(temp < 20){
+                document.getElementById("demo").innerHTML =
+                "Hello Buddy, Please warm up!";
+            }else{
+                document.getElementById("demo").innerHTML =
+                "Hello Buddy, Optimum Temperature!";
+            }
+            
+        }else{
+            document.getElementById("demo").innerHTML =
+            temp + " is not a number! Refresh the page and enter again!";
+        }
+    }
+
+    window.onload = (myFunction());
+
+</script>
+
+</body>
+</html>
